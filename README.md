@@ -7,3 +7,9 @@ yarn install
 yarn start
 ```
 ## 单例模式
+
+> TODO
+
+## 观察者模式(发布/订阅模式)
+
+> TODO

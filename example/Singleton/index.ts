@@ -8,4 +8,4 @@ import { Singleton } from '../../src/main';
 const instance = Singleton.getInstance();
 const instance2 = Singleton.getInstance();
 
-console.log(instance === instance2); // true
+console.log(instance === instance2);  // true
