@@ -6,9 +6,10 @@
   "author": "sakuraash <841105127@qq.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel src/index.html"
+    "start": "parcel index.html"
   },
   "dependencies": {
+    "@blueprintjs/core": "^1.35.3",
     "parcel-bundler": "^1.5.1",
     "typescript": "^2.7.1"
   }
