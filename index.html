@@ -14,10 +14,10 @@
 </head>
 <body>
 
-  <a href="./example/Singleton/index.html">单例模式</a>
-  <div class="pt-card pt-elevation-2 pt-interactive">
+  <div>
+    <h4><a href="">单例模式</a></h4>
     <h3><a href="">A example for Singleton</a></h3>
-    <pre>
+    <pre class="pt-card pt-elevation-2 pt-interactive">
       class Singleton {
         private constructor() {}
       
@@ -34,7 +34,7 @@
       export default Singleton;      
     </pre>
     <h4><a href="">Useage</a></h4>
-    <pre>
+    <pre class="pt-card pt-elevation-2 pt-interactive">
       import { Singleton } from '../../src/main';
   
       /**
@@ -49,10 +49,10 @@
     </pre>
   </div>
 
-  <a href="./example/Observer/index.html">观察者模式/发布订阅模式</a>
-  <div class="pt-card pt-elevation-2 pt-interactive">
+  <h4><a href="">观察者模式/发布订阅模式</a></h4>
+  <div>
     <h3><a href="">A example for Observer</a></h3>
-    <pre>
+    <pre  class="pt-card pt-elevation-2 pt-interactive">
       /**
       * Observer类
       */
@@ -85,21 +85,14 @@
       }
     </pre>
     <h4><a href="">Useage</a></h4>
-    <pre>
-      import { Observer, Subject } from '../../src/main';
-
-      // 实现具体目标类
-      class ControlCenter extends Subject {
+    <pre class="pt-card pt-elevation-2 pt-interactive">
       
-      }
-      
-      // 实现具体观察者类
-      class ConcreteObserver extends Observer {
-      
-      }
     </pre>
     <div>
-      <button class="pt-button pt-intent-success">click!</button>
+      <button class="pt-button pt-intent-success" id="btn1">click!</button>
+      <button class="pt-button pt-intent-success" id="btn2">click!</button>
+      <button class="pt-button pt-intent-success" id="btn3">click!</button>
+      <button class="pt-button pt-intent-success" id="btn4">click!</button>
       <div class="card"></div>
     </div>
   </div>
