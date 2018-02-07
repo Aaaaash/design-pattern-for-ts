@@ -48,7 +48,7 @@ class ConcreteObserver extends Observer {
 class Main {
   constructor() {}
 
-  public main() {
+  public main(): void {
     const controlMain = new ControlSubject();
     const btn1 = new ConcreteObserver(
       'btn1',
@@ -85,5 +85,4 @@ class Main {
   }
 }
 
-const app = new Main();
-app.main();
+export default new Main();

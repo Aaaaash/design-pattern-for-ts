@@ -6,7 +6,9 @@ interface Listener {
 export default class PubSub {
   listeners: Listener[]
 
-  constructor() {}
+  constructor() {
+    this.listeners = [];
+  }
 
   public subscribe(name: string, callback: Function) {
     this.listeners.push({
