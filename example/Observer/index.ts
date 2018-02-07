@@ -50,10 +50,22 @@ class Main {
 
   public main() {
     const controlMain = new ControlSubject();
-    const btn1 = new ConcreteObserver('btn1', (document.querySelector('#btn1') as HTMLElement));
-    const btn2 = new ConcreteObserver('btn2', (document.querySelector('#btn2') as HTMLElement));
-    const btn3 = new ConcreteObserver('btn3', (document.querySelector('#btn3') as HTMLElement));
-    const btn4 = new ConcreteObserver('btn4', (document.querySelector('#btn4') as HTMLElement));
+    const btn1 = new ConcreteObserver(
+      'btn1',
+      (document.querySelector('#btn1') as HTMLElement)
+    );
+    const btn2 = new ConcreteObserver(
+      'btn2',
+      (document.querySelector('#btn2') as HTMLElement)
+    );
+    const btn3 = new ConcreteObserver(
+      'btn3',
+      (document.querySelector('#btn3') as HTMLElement)
+    );
+    const btn4 = new ConcreteObserver(
+      'btn4',
+      (document.querySelector('#btn4') as HTMLElement)
+    );
     controlMain.add(btn1);
     controlMain.add(btn2);
     controlMain.add(btn3);
