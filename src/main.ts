@@ -1,8 +1,9 @@
 import Singleton from './Singleton';
-import { Observer, Subject } from './Observer';
+// import Subject from './Observer/Subject';
+import Observer from './Observer/Observer';
 
 export {
   Singleton,
   Observer,
-  Subject,
+  // Subject,
 };

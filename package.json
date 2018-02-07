@@ -6,11 +6,17 @@
   "author": "sakuraash <841105127@qq.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "webpack-dev-server --open",
+    "dev": "webpack-dev-server --env.dev"
   },
   "dependencies": {
     "@blueprintjs/core": "^1.35.3",
-    "parcel-bundler": "^1.5.1",
-    "typescript": "^2.7.1"
+    "awesome-typescript-loader": "^3.4.1",
+    "html-webpack-plugin": "^2.30.1",
+    "source-map-loader": "^0.2.3",
+    "typescript": "2.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-middleware": "^2.0.4",
+    "webpack-dev-server": "^2.11.1"
   }
 }

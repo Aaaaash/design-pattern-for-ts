@@ -1,13 +1,11 @@
-import { Observer } from './index';
-
-export default class ObserversList {
-  observers: Observer[];
+export class ObserversList {
+  observers: any;
 
   constructor() {
     this.observers = [];
   }
 
-  public add = (obj: Observer) => this.observers.push(obj);
+  public add = (obj: any) => this.observers.push(obj);
 
   public count = (): number => this.observers.length;
 
@@ -15,10 +13,10 @@ export default class ObserversList {
     if (index > -1 && index < this.observers.length) {
       return this.observers[index];
     }
-    return new Observer();
+    return null;
   }
 
-  public indexOf = (obj: Observer, startIndex: number) => {
+  public indexOf = (obj: any, startIndex: number) => {
     let i = startIndex;
     while(i < this.observers.length) {
       if (this.observers[i] === obj) {
@@ -30,5 +28,4 @@ export default class ObserversList {
   }
 
   public removeAt = (index: number) => this.observers.splice(index, 1);
-
 }

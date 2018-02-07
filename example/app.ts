@@ -1,0 +1,2 @@
+import('./Observer');
+import ('./Singleton');

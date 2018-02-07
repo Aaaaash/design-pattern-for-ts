@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>design-pattern</title>
-  <link href="./node_modules/@blueprintjs/core/dist/blueprint.css" rel="stylesheet" />
+  <link href="https://unpkg.com/@blueprintjs/core@^1.11.0/dist/blueprint.css" rel="stylesheet" />
   <style>
     .app {
       padding: 20px 50px;
@@ -13,9 +13,97 @@
   </style>
 </head>
 <body>
-  <ul class="app">
-    <li><a href="./example/Singleton/index.html">单例模式</a></li>
-    <li><a href="./example/Observer/index.html">观察者模式/发布订阅模式</a></li>
-  </ul>
-</body>
+
+  <a href="./example/Singleton/index.html">单例模式</a>
+  <div class="pt-card pt-elevation-2 pt-interactive">
+    <h3><a href="">A example for Singleton</a></h3>
+    <pre>
+      class Singleton {
+        private constructor() {}
+      
+        private static instance: Singleton;
+      
+        public static getInstance(): Singleton {
+          if (!this.instance) {
+            this.instance = new Singleton();
+          }
+          return this.instance;
+        }
+      }
+      
+      export default Singleton;      
+    </pre>
+    <h4><a href="">Useage</a></h4>
+    <pre>
+      import { Singleton } from '../../src/main';
+  
+      /**
+        * don't do this
+        * const instance = new Singleton();
+        * */
+      
+      const instance = Singleton.getInstance();
+      const instance2 = Singleton.getInstance();
+      
+      console.log(instance === instance2); // true
+    </pre>
+  </div>
+
+  <a href="./example/Observer/index.html">观察者模式/发布订阅模式</a>
+  <div class="pt-card pt-elevation-2 pt-interactive">
+    <h3><a href="">A example for Observer</a></h3>
+    <pre>
+      /**
+      * Observer类
+      */
+      class Observer {
+      update(data: any): void {};
+      }
+
+
+      /**
+      * Subject类
+      */
+
+      class Subject {
+      observers: ObserversList;
+      
+      constructor() {
+        this.observers = new ObserversList();  
+      }
+
+      public addObserver = (observer: Observer) => this.observers.add(observer);
+
+      public removeObserver = (observer: Observer) => this.observers.removeAt(this.observers.indexOf(observer, 0));
+
+      public notify = (context: any) => {
+        const observerCount = this.observers.count();
+        for (let i = 0; i < observerCount; i += 1) {
+          this.observers.get(i).update(context);
+        }
+      }
+      }
+    </pre>
+    <h4><a href="">Useage</a></h4>
+    <pre>
+      import { Observer, Subject } from '../../src/main';
+
+      // 实现具体目标类
+      class ControlCenter extends Subject {
+      
+      }
+      
+      // 实现具体观察者类
+      class ConcreteObserver extends Observer {
+      
+      }
+    </pre>
+    <div>
+      <button class="pt-button pt-intent-success">click!</button>
+      <div class="card"></div>
+    </div>
+  </div>
+
+  <a href="../../index.html">Back</a>
+  <script type="text/javascript" src="./dist/bundle.js"></script></body>
 </html>
