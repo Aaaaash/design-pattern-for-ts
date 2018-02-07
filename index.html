@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,11 +13,15 @@
     }
   </style>
 </head>
-<body>
 
-  <div>
-    <h4><a href="">单例模式</a></h4>
-    <h3><a href="">A example for Singleton</a></h3>
+<body>
+  <div ca>
+    <h4>
+      <a href="">单例模式</a>
+    </h4>
+    <h3>
+      <a href="">A example for Singleton</a>
+    </h3>
     <pre class="pt-card pt-elevation-2 pt-interactive">
       class Singleton {
         private constructor() {}
@@ -33,7 +38,9 @@
       
       export default Singleton;      
     </pre>
-    <h4><a href="">Useage</a></h4>
+    <h4>
+      <a href="">Useage</a>
+    </h4>
     <pre class="pt-card pt-elevation-2 pt-interactive">
       import { Singleton } from '../../src/main';
   
@@ -50,9 +57,13 @@
   </div>
 
   <div>
-    <h4><a href="">观察者模式</a></h4>
-    <h3><a href="">A example for Observer</a></h3>
-    <pre  class="pt-card pt-elevation-2 pt-interactive">
+    <h4>
+      <a href="">观察者模式</a>
+    </h4>
+    <h3>
+      <a href="">A example for Observer</a>
+    </h3>
+    <pre class="pt-card pt-elevation-2 pt-interactive">
       /**
       * Observer类
       */
@@ -84,7 +95,9 @@
       }
       }
     </pre>
-    <h4><a href="">Useage</a></h4>
+    <h4>
+      <a href="">Useage</a>
+    </h4>
     <pre class="pt-card pt-elevation-2 pt-interactive">
         class ControlSubject extends Observable {
 
@@ -181,6 +194,66 @@
       <div class="card"></div>
     </div>
   </div>
+  <div>
+    <h4>
+      <a href="">pubsub模式</a>
+    </h4>
+    <h3>
+      <a href="">A example for PubSub</a>
+    </h3>
+    <pre class="pt-card pt-elevation-2 pt-interactive">
+interface Listener {
+  name: string;
+  callback: Function;
+}
 
-  <a href="../../index.html">Back</a>
+export default class PubSub {
+  listeners: Listener[]
+
+  constructor() {
+    this.listeners = [];
+  }
+
+  public subscribe(name: string, callback: Function) {
+    this.listeners.push({
+      name,
+      callback,
+    });
+  }
+
+  public dispatch(name: string, ...args: any[]): boolean {
+    const listener = this.listeners.find((v) => v.name === name);
+    if (!listener) {
+      return false;
+    }
+    return listener.callback(...args);
+  }
+
+  public unsubscribe(name: string): boolean {
+    const listenerIndex = this.listeners.findIndex((v) => v.name === name);
+    if (listenerIndex === -1) {
+      return false;
+    }
+    this.listeners.splice(listenerIndex, 1);
+    return true;
+  }
+}          
+      </pre>
+    <h4>
+      <a href="">Useage</a>
+    </h4>
+    <pre class="pt-card pt-elevation-2 pt-interactive">
+// pubsub模式
+const pubsub = new PubSub();
+
+const btn1 = document.querySelector('#btn1');
+pubsub.subscribe('keke', (...args: any[]) => {
+  console.log(...args)
+});
+
+(btn1 as HTMLElement).addEventListener('click', () => {
+  pubsub.dispatch('keke', 'hello', 'sakura');
+});
+      </pre>
+  </div>
 </html>

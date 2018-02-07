@@ -12,7 +12,7 @@ class Observable {
   observers: ObserversList;
 
   add (obj: any) {
-    console.log(obj.name);
+    console.log(`${obj.name} has been added!`);
     this.observers.add(obj);
   };
 
