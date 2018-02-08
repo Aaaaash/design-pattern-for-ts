@@ -1,5 +1,6 @@
 import { PubSub } from '../src/Observer';
 import app from './Observer';
+import client from './Mediator';
 
 // 单例模式
 import ('./Singleton');
@@ -7,6 +8,7 @@ import ('./Singleton');
 // 观察者模式
 app.main();
 
+client.main();
 
 // pubsub模式
 const pubsub = new PubSub();
