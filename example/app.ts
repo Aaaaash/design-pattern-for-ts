@@ -8,6 +8,7 @@ import ('./Singleton');
 // 观察者模式
 app.main();
 
+// 中介者模式
 client.main();
 
 // pubsub模式

@@ -1,4 +1,4 @@
-import { Singleton } from '../../src/main';
+import Singleton from '../../src/Singleton';
 
 /**
  * don't do this
